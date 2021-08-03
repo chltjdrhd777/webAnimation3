@@ -7,7 +7,6 @@ import Main from "components/Main";
 function Home() {
   return (
     <div>
-      <Sidebar />
       <Header />
       <Main />
       <Footer />
