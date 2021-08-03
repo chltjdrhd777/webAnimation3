@@ -18,7 +18,7 @@ function index() {
     <header className={masterHeader}>
       <div className="container">
         <nav className={nav}>
-          <article></article>
+          <div className="menu-toggle"></div>
         </nav>
       </div>
     </header>
