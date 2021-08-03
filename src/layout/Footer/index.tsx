@@ -14,7 +14,7 @@ const { masterFooter } = headerCSS;
 function index() {
   return (
     <footer className={masterFooter}>
-      <section className="container"></section>
+      <div className="container"></div>
     </footer>
   );
 }

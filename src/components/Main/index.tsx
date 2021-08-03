@@ -15,7 +15,7 @@ const { masterMain } = mainCSS;
 function index() {
   return (
     <main className={masterMain}>
-      <section className="container"></section>
+      <div className="container"></div>
     </main>
   );
 }

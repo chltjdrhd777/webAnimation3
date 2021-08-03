@@ -14,7 +14,7 @@ const { masterSidebar } = sidebarCSS;
 function index() {
   return (
     <aside className={masterSidebar}>
-      <section className="container"></section>
+      <div className="container"></div>
     </aside>
   );
 }

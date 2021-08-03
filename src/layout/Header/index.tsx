@@ -5,17 +5,22 @@ import { Link } from "react-router-dom";
 const headerCSS = (function () {
   class CSSMaker {
     readonly masterHeader = css``;
+    readonly nav = css``;
   }
 
   return new CSSMaker();
 })();
 
-const { masterHeader } = headerCSS;
+const { masterHeader, nav } = headerCSS;
 
 function index() {
   return (
     <header className={masterHeader}>
-      <section className="container"></section>
+      <div className="container">
+        <nav className={nav}>
+          <article></article>
+        </nav>
+      </div>
     </header>
   );
 }
