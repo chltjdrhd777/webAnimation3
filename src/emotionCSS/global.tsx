@@ -42,6 +42,10 @@ const globalCSS = css`
     font-size: 1.6rem;
   }
 
+  ul {
+    list-style: none;
+  }
+
   .container {
     width: 100%;
     max-width: 122.5rem;

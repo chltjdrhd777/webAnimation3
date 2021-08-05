@@ -6,6 +6,8 @@ import CloseIcon from "@material-ui/icons/Close";
 import Logo from "images/logo-rosa.png";
 
 import NavList from "./NavList";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const headerCSS = (function () {
   class CSSMaker {
@@ -36,9 +38,51 @@ const headerCSS = (function () {
         z-index: 1000;
         & > svg {
           font-size: 2.2rem;
-          &:nth-of-type(2) {
-            display: none;
-          }
+        }
+      }
+
+      & > .nav-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--main-font-color-dark);
+        padding: 4.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 900;
+
+        transform: translateX(-100%);
+        /* &.opened {
+          transform: translateX(0);
+        } */
+        transition: transform 0.5s;
+      }
+
+      &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: 800;
+        opacity: 0;
+        transform: scale(0);
+        transition: opacity 0.5s;
+      }
+
+      &.opened {
+        & > .nav-list {
+          transform: translateX(0);
+        }
+
+        &::after {
+          opacity: 1;
+          transform: scale(1);
         }
       }
     `;
@@ -49,14 +93,18 @@ const headerCSS = (function () {
 
 const { masterHeader, nav } = headerCSS;
 
-function index() {
+function Header() {
+  const [isClose, setIsClose] = useState(false);
+
   return (
     <header className={masterHeader}>
       <div className="container">
-        <nav className={nav}>
-          <div className="menu-toggle">
-            <MenuIcon />
-            <CloseIcon />
+        <nav className={`${nav} ${!isClose ? "opened" : ""}`}>
+          <div
+            className="menu-toggle"
+            onClick={() => setIsClose((prev) => !prev)}
+          >
+            {isClose ? <MenuIcon /> : <CloseIcon />}
           </div>
 
           <Link to="/" className="logo">
@@ -70,4 +118,4 @@ function index() {
   );
 }
 
-export default index;
+export default Header;
