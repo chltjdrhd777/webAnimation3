@@ -59,6 +59,20 @@ const headerCSS = (function () {
           transform: translateX(0);
         } */
         transition: transform 0.5s;
+
+        & > .nav-item {
+          border-bottom: 2px solid gray;
+          & > a {
+            color: white;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.5s;
+            &:hover {
+              color: var(--secondary-font-color);
+            }
+          }
+        }
       }
 
       &::after {
@@ -94,17 +108,17 @@ const headerCSS = (function () {
 const { masterHeader, nav } = headerCSS;
 
 function Header() {
-  const [isClose, setIsClose] = useState(false);
+  const [isClosed, setIsClosed] = useState(true);
 
   return (
     <header className={masterHeader}>
       <div className="container">
-        <nav className={`${nav} ${!isClose ? "opened" : ""}`}>
+        <nav className={`${nav} ${!isClosed ? "opened" : ""}`}>
           <div
             className="menu-toggle"
-            onClick={() => setIsClose((prev) => !prev)}
+            onClick={() => setIsClosed((prev) => !prev)}
           >
-            {isClose ? <MenuIcon /> : <CloseIcon />}
+            {isClosed ? <MenuIcon /> : <CloseIcon />}
           </div>
 
           <Link to="/" className="logo">

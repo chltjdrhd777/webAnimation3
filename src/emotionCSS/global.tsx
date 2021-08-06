@@ -52,6 +52,12 @@ const globalCSS = css`
     margin: 0 auto;
     padding: 0 2.4rem;
   }
+
+  .centering {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 function GlobalStyle() {
