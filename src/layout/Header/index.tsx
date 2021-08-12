@@ -7,7 +7,6 @@ import Logo from "images/logo-rosa.png";
 
 import NavList from "./NavList";
 import { useState } from "react";
-import { useEffect } from "react";
 
 const headerCSS = (function () {
   class CSSMaker {
@@ -109,6 +108,7 @@ const { masterHeader, nav } = headerCSS;
 
 function Header() {
   const [isClosed, setIsClosed] = useState(true);
+  const [test, setTest] = useState(1);
 
   return (
     <header className={masterHeader}>

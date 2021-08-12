@@ -13,26 +13,6 @@ const heroCSS = (function () {
       background-size: cover;
       text-align: center;
 
-      & .sub-headline {
-        font-size: 8.5rem;
-        font-family: var(--secondary-font);
-        color: var(--secondary-font-color);
-        font-weight: 100;
-        line-height: 0.4;
-        letter-spacing: 2px;
-        margin-right: -2px;
-      }
-
-      & .headline {
-        color: white;
-        font-size: 3.7rem;
-        font-family: var(--main-font);
-        text-transform: uppercase;
-        font-weight: 900;
-        letter-spacing: 0.5rem;
-        margin-right: -0.5rem;
-      }
-
       & .headline-description {
         & .separator {
           & .line {
